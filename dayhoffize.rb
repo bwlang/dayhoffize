@@ -54,7 +54,7 @@ def three_to_one(input_stream)
     codes = []
     clean_three_string.scan(/.{3}/){|code| codes << code.downcase.to_sym}
 
-    print codes.map{|code| THREE_TO_ONE[code].to_s.upcase || "?"}.join
+    print codes.map{|code| (THREE_TO_ONE[code] || "?").to_s.upcase}.join
   end
   puts ""
 end
